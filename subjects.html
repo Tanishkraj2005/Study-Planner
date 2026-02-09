@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><title>Subjects</title><link rel="stylesheet" href="style.css"></head>
+<body onload="loadTheme()">
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="subjects.html">Subjects</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="settings.html">Settings</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Add Subject</h2>
+        <input id="subName" placeholder="Subject Name">
+        <h3>Proiority Level</h3>
+        <select id="subPriority">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select>
+        <button onclick="addSubject()">Add</button>
+    </div>
+
+    <div class="card">
+        <h2>Subject List</h2>
+        <div id="subjectList"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+let subjects = loadSubjects();
+let div = document.getElementById("subjectList");
+
+subjects.forEach((s,i)=>{
+    div.innerHTML += `
+        <p><b>${s.name}</b> (${s.priority})
+        <button onclick="deleteSubject(${i})">Delete</button></p>
+    `;
+});
+</script>
+
+</body>
+</html>

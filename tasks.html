@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tasks</title><link rel="stylesheet" href="style.css"></head>
+<body onload="loadTheme()">
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="subjects.html">Subjects</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="settings.html">Settings</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Add Task</h2>
+
+        <input id="taskTitle" placeholder="Task Title">
+
+        <select id="taskSubject">
+            <option>Select Subject</option>
+        </select>
+
+        <input type="date" id="taskDeadline">
+
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="card">
+        <h2>Task List</h2>
+        <div id="taskList"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+let subs = loadSubjects();
+let s = document.getElementById("taskSubject");
+
+subs.forEach(x=>{
+    let op = document.createElement("option");
+    op.textContent = x.name;
+    s.appendChild(op);
+});
+
+let tasks = loadTasks();
+let div = document.getElementById("taskList");
+
+tasks.forEach((t,i)=>{
+    div.innerHTML += `
+        <p>
+        <b>${t.title}</b> (${t.subject}) - ${t.deadline}
+        <button onclick="markTaskDone(${i})">Done</button>
+        </p>
+    `;
+});
+</script>
+
+</body>
+</html>

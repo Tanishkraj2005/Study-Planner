@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadTheme()">
+
+    <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="subjects.html">Subjects</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="settings.html">Settings</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Welcome to Smart Study Planner</h2>
+        <p>Your productivity companion.</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Subjects</h3>
+        <p id="subjectCount"></p>
+    </div>
+
+    <div class="card">
+        <h3>Upcoming Tasks</h3>
+        <ul id="upcoming"></ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+    let subs = loadSubjects();
+    document.getElementById("subjectCount").innerText = subs.length;
+
+    let tasks = loadTasks();
+    let upcoming = document.getElementById("upcoming");
+    tasks.slice(0,3).forEach(t=>{
+        let li = document.createElement("li");
+        li.innerText = `${t.title} - ${t.deadline}`;
+        upcoming.appendChild(li);
+    });
+</script>
+</body>
+</html>

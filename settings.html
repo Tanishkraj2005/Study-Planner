@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Settings</title><link rel="stylesheet" href="style.css"></head>
+<body onload="loadTheme()">
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="subjects.html">Subjects</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="settings.html">Settings</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Theme</h2>
+        <button onclick="toggleTheme()">Dark/Light</button>
+    </div>
+
+    <div class="card">
+        <h2>Data Management</h2>
+        <button onclick="resetData()">Reset All Data</button>
+        <button onclick="exportData()">Export Data</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
