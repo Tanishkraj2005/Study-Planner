@@ -7,12 +7,21 @@
 <body onload="loadTheme()">
 
     <nav>
-    <a href="index.html">Dashboard</a>
-    <a href="subjects.html">Subjects</a>
-    <a href="tasks.html">Tasks</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="analytics.html">Analytics</a>
-    <a href="settings.html">Settings</a>
+    <div class="nav-left">
+        <a href="index.html" class="brand">Study Planner</a>
+        <a href="index.html">Dashboard</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="subjects.html">Subjects</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="settings.html">Settings</a>
+
+        <!-- DARK / LIGHT TOGGLE -->
+        <button class="themeToggle" onclick="toggleTheme()">🌙</button>
+    </div>
 </nav>
 
 <div class="container">

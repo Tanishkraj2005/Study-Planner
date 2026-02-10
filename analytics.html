@@ -1,22 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head><title>Analytics</title><link rel="stylesheet" href="style.css"></head>
+<head>
+    <title>Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body onload="loadTheme(); generateAnalytics();">
 
 <nav>
-    <a href="index.html">Dashboard</a>
-    <a href="subjects.html">Subjects</a>
-    <a href="tasks.html">Tasks</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="analytics.html">Analytics</a>
-    <a href="settings.html">Settings</a>
+    <div class="nav-left">
+        <a href="index.html" class="brand">Study Planner</a>
+        <a href="index.html">Dashboard</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="subjects.html">Subjects</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="settings.html">Settings</a>
+
+        <!-- DARK / LIGHT TOGGLE -->
+        <button class="themeToggle" onclick="toggleTheme()">🌙</button>
+    </div>
 </nav>
+
 
 <div class="container">
 
+    <h1 class="analytics-title">Study Analytics</h1>
+
+    <div class="analytics-cards">
+
+        <div class="analytics-card">
+            <h3>Total Tasks</h3>
+            <p id="totalTasks">0</p>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Completed</h3>
+            <p id="completedTasks">0</p>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Pending</h3>
+            <p id="pendingTasks">0</p>
+        </div>
+
+    </div>
+
     <div class="card">
-        <h2>Task Completion Chart</h2>
-        <canvas id="chart" width="300" height="200"></canvas>
+        <h2>Task Completion Bar Chart</h2>
+        <canvas id="barChart" width="400" height="260"></canvas>
+    </div>
+
+    <div class="card">
+        <h2>Task Completion Pie Chart</h2>
+        <canvas id="pieChart" width="400" height="260"></canvas>
     </div>
 
 </div>
