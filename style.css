@@ -65,8 +65,7 @@ p {
     color: #1f2937;
 }
 
-input,
-select {
+input, select {
     width: 100%;
     padding: 12px;
     margin-top: 12px;
@@ -77,8 +76,7 @@ select {
     transition: 0.25s;
 }
 
-input:focus,
-select:focus {
+input:focus, select:focus {
     border-color: #3b82f6;
     background: white;
     outline: none;
@@ -150,7 +148,7 @@ canvas {
 
 .dark {
     background: #0f172a !important;
-    color: white !important;
+    color: #ffffff !important;
 }
 
 .dark nav {
@@ -160,18 +158,29 @@ canvas {
 .dark .card {
     background: #1e293b !important;
     border-left-color: #38bdf8;
+    color: white !important;
+}
+
+.dark h2, 
+.dark h3, 
+.dark p, 
+.dark label,
+.dark a,
+.dark span {
+    color: #ffffff !important;
 }
 
 .dark input,
 .dark select {
     background: #0f172a !important;
-    color: white !important;
+    color: #ffffff !important;
     border-color: #334155;
 }
 
 .dark #subjectList p,
 .dark #taskList p {
     background: #1e293b !important;
+    color: white !important;
 }
 
 .dark #timetable h3 {
@@ -180,10 +189,12 @@ canvas {
 
 .dark #timetable p {
     background: #334155 !important;
+    color: white !important;
 }
 
 .dark button {
     background: linear-gradient(90deg, #6366f1, #0ea5e9) !important;
+    color: white !important;
 }
 
 .dark button:hover {
